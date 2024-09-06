@@ -1,0 +1,115 @@
+/* Reset default styles and apply a base font size */
+body, html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles for headings */
+h1, h2 {
+    text-align: center;
+}
+
+/* Container for the form */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.center-checkboxes {
+    text-align: center;
+}
+
+.center-checkboxes label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Labels and inputs inside the form */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="checkbox"], button {
+    width: calc(100% - 20px); /* Adjust width to fit inside container */
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0 10px 0 0;
+}
+
+/* Specific styling for buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+}
+
+/* Styling for the history table */
+.history-table {
+    margin-top: 20px;
+}
+
+.history-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.history-table th, .history-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.history-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Responsive design for tables */
+@media screen and (max-width: 600px) {
+    .history-table table {
+        font-size: 14px;
+    }
+}
+
+/* Additional styling for checkboxes */
+.checkbox-container {
+    margin-bottom: 10px;
+}
+
+/* Styling for checkboxes and associated labels */
+.checkbox-container label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Highlighting for incomplete and compound interest sections */
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    color: #4CAF50; /* Green color for positive results */
+}
+
+h2.${incomplete} {
+    color: #f44336; /* Red color for incomplete fields */
+}
