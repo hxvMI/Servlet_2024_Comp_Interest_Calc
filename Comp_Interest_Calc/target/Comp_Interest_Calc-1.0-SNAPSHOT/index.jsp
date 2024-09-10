@@ -40,10 +40,10 @@ value=${rPrinciple} actual values in the input box
 
     <div class="checkbox-container center-checkboxes">
         <label for="DisplayHistory" id="DisplayHistoryText">Display History</label>
-        <input id="DisplayHistory" type="checkbox" name="history" value="true" checked>
+        <input id="DisplayHistory" type="checkbox" name="history" <%= (request.getAttribute("showHistory") != null && (Boolean)request.getAttribute("showHistory")) ? "checked" : "" %>>
 
         <label for="DeleteHistory" id="DeleteHistoryText">Delete History</label>
-        <input id="DeleteHistory" type="checkbox" name="delete" value="true">
+        <input id="DeleteHistory" type="checkbox" name="delete">
     </div>
 
     <button type="reset" value="Reset">Reset</button>
@@ -78,7 +78,7 @@ value=${rPrinciple} actual values in the input box
         </tr>
         </thead>
         <tbody>
-        <% if (HistoryItemRepo.showHistory) {
+        <% if (request.getAttribute("showHistory") != null && (Boolean)request.getAttribute("showHistory")) {
             HashMap<Integer, HistoryItem> historyItems = HistoryItemRepo.getItems();
             for(Map.Entry<Integer, HistoryItem> entry : historyItems.entrySet()) {
                 HistoryItem currItem = entry.getValue();
@@ -86,7 +86,7 @@ value=${rPrinciple} actual values in the input box
         <tr>
             <td><%= entry.getKey() %></td>
             <td><%= currItem.getPrincipleD() %></td>
-            <td><%= currItem.getInterestPercentD()%></td>
+            <td><%= currItem.getInterestPercentD() %></td>
             <td><%= currItem.getYearsInt() %></td>
             <td><%= currItem.getPerYearInt() %></td>
             <td><%= currItem.getResult() %></td>

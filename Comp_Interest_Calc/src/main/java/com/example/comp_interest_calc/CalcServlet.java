@@ -1,8 +1,11 @@
 package com.example.comp_interest_calc;
 import java.io.*;
+import java.util.logging.Logger;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.junit.platform.commons.logging.LoggerFactory;
 
 //NOTE: if MySQL No Connection Established refer to
 
@@ -105,12 +108,14 @@ public class CalcServlet extends HttpServlet {
      *  and sets request Attribute "showHistory" used in index.jsp to determine if HistoryItems should be shown or not
      */
     protected void showHistory(HttpServletRequest request, String history) throws ServletException, IOException {
-        //Shows Calculation History if true
-        boolean historyBool = Boolean.parseBoolean(history);
-        if (historyBool) {
-            HistoryItemRepo.getItems();
+        // Shows Calculation History if the checkbox is checked
+        if (history != null && history.equals("on")) {
+            request.setAttribute("showHistory", true);  // Set an attribute to indicate history should be shown
+        } else {
+            request.setAttribute("showHistory", false); // Ensure history is not shown if checkbox is unchecked
         }
     }
+
 
     /**
      *  @param delete
@@ -119,8 +124,7 @@ public class CalcServlet extends HttpServlet {
      */
     protected void deleteHistory(String delete) throws ServletException, IOException {
         //Clears Calculation History if true
-        boolean deleteBool = Boolean.parseBoolean(delete);
-        if (deleteBool) {
+        if (delete != null) {
             HistoryItemRepo.clearHistory();
         }
     }

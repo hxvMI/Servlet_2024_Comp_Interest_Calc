@@ -12,17 +12,17 @@
 
     <error-page>
             <error-code>404</error-code>
-            <location>/Error_404.jsp</location>
+            <location>/ErrorPages/Error_404.jsp</location>
         </error-page>
 
         <error-page>
             <error-code>500</error-code>
-            <location>/Error_500.jsp</location>
+            <location>/ErrorPages/Error_500.jsp</location>
         </error-page>
 
         <error-page>
             <exception-type>java.text.ParseException</exception-type>
-            <location>/Exception_Parse.jsp</location>
+            <location>/ErrorPages/Exception_Parse.jsp</location>
         </error-page>
 
     <servlet>
