@@ -2,7 +2,12 @@
 
 ## Reason for Project
 
-I wanted to expand my knowledge of Java related technology and API's so I started learning what I could  and this project is me puttting everything I've learned so far to use.
+I wanted to expand my knowledge of Java related technology and API's so I started learning what I could and this project is me puttting everything I've learned so far to use.
+
+## Disclaimer
+
+This project is meant to have an amalgamation of all the different things I've been learning so it's not meant to be very efficient in general.  
+
 
 ## Overview
 
