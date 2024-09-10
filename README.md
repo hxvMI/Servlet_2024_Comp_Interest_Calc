@@ -1,10 +1,12 @@
 # Compound Interest Calculator
 
+![msedge_FN3ZtEzQQl](https://github.com/user-attachments/assets/dbec7482-a432-4989-a02d-e02bea81fa52)
+
 ## Reason for Project
 
 I wanted to expand my knowledge of Java related technology and API's so I started learning what I could and this project is me puttting everything I've learned so far to use.
 
-## Disclaimer
+### Disclaimer
 
 This project is meant to have an amalgamation of all the different things I've been learning so it's not meant to be very efficient in general.  
 
