@@ -40,6 +40,7 @@ value=${rPrinciple} actual values in the input box
 
     <div class="checkbox-container center-checkboxes">
         <label for="DisplayHistory" id="DisplayHistoryText">Display History</label>
+<%--                                                                    showHistory value from POST Request sent if not NULL and TRUE will apply "check" property to HTML--%>
         <input id="DisplayHistory" type="checkbox" name="history" <%= (request.getAttribute("showHistory") != null && (Boolean)request.getAttribute("showHistory")) ? "checked" : "" %>>
 
         <label for="DeleteHistory" id="DeleteHistoryText">Delete History</label>
@@ -48,7 +49,7 @@ value=${rPrinciple} actual values in the input box
 
     <button type="reset" value="Reset">Reset</button>
 
-    <button id="Submit" type="submit">Submit</button>
+    <button type="submit" id="Submit">Submit</button>
     <h2>${incomplete}</h2>
     <h2>${compoundInterest}</h2>
 </form>
@@ -77,7 +78,7 @@ value=${rPrinciple} actual values in the input box
             <th>Result ($)</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody><%--showHistory value from POST Request sent with SUBMIT         is TRUE if conditions MET--%>
         <% if (request.getAttribute("showHistory") != null && (Boolean)request.getAttribute("showHistory")) {
             HashMap<Integer, HistoryItem> historyItems = HistoryItemRepo.getItems();
             for(Map.Entry<Integer, HistoryItem> entry : historyItems.entrySet()) {

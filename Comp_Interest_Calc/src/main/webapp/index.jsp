@@ -48,8 +48,8 @@ value=${rPrinciple} actual values in the input box
     </div>
 
     <button type="reset" value="Reset">Reset</button>
-
-    <button id="Submit" type="submit">Submit</button>
+    <button type="submit" id="Submit">Submit</button>
+    
     <h2>${incomplete}</h2>
     <h2>${compoundInterest}</h2>
 </form>
