@@ -9,6 +9,8 @@
     <title>Compound Interest Calculator</title>
 <%--Need to increase version=# to see changes in CSS              VVV--%>
     <link rel="stylesheet" type="text/css" href="style.css?version=7">
+    <script src="scroll.js"></script> <!-- Link to external JavaScript file -->
+
 </head>
 <%--
 for="PrincipleAmount" and id="PrincipleAmount" link to each other
@@ -23,7 +25,7 @@ value=${rPrinciple} actual values in the input box
 --%>
 <body>
 <h1>Compound Interest Calculator</h1>
-<form method="post" action="/Calculate" class="container">
+<form method="post" action="/Calculate" class="container" onsubmit="saveScrollPosition()">
 
     <label for="PrincipleAmount">Principle Amount $</label>
     <input id="PrincipleAmount" type="number" name="principle" step="0.01" placeholder="15000" value=${rPrinciple}>
@@ -49,7 +51,7 @@ value=${rPrinciple} actual values in the input box
 
     <button type="reset" value="Reset">Reset</button>
     <button type="submit" id="Submit">Submit</button>
-    
+
     <h2>${incomplete}</h2>
     <h2>${compoundInterest}</h2>
 </form>
